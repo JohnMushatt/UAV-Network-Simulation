@@ -9,6 +9,8 @@
 #include "Model.h"
 #include "Link.h"
 #include "Drones/Base_Drone.h"
+#include "Drones/Command_UAV.h"
+#include "Drones/Basic_UAV.h"
 #include <iostream>
 #include <memory>
 
@@ -71,6 +73,14 @@ public:
     vector<shared_ptr<Node>> getShortestPath(const shared_ptr<Node> src, const shared_ptr<Node> des, int method);
 
     /**
+     * Attempts to find the node with the given string id
+     * @param id ID of node to find
+     * @return A shared ptr object of type Node that has the specified id
+     *         returns nullptr if not found
+     */
+    shared_ptr<Node> findNode(const std::string &id);
+
+    /**
      * Updates the network based on new nodes, links, and status of nodes. The update to the network
      * is based on the current network model/policy
      * MESH MODE : Applies the self-healing model to retain connectivity of network
@@ -86,6 +96,18 @@ public:
      * @param limit # of drones allowed per command uav
      */
     void setNetworkLimit(unsigned int limit);
+
+    /**
+     * Prints out the current state of the network
+     * Displays:
+     * Command UAVs
+     * Base_Drones
+     * Nodes
+     * Links
+     */
+    void displayNetwork();
+
+    void initNetwork();
 
 private:
     /**
@@ -103,6 +125,11 @@ private:
      * Objects of type Base_Drone are not gauranteed to be connected to other drones
      */
     vector<shared_ptr<Base_Drone>> drones;
+    /**
+     * cmd_drones contains the current set of command uav drones handled by the network
+     * Objects of type Base_Drone are not gauranteed to be connected to other drones
+     */
+    vector<shared_ptr<Command_UAV>> cmd_drones;
     /**
      * Limit for the # of nodes in the network
      * Can be resized

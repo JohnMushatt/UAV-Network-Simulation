@@ -4,8 +4,8 @@
 
 #include "Command_UAV.h"
 
-Command_UAV::Command_UAV(std::string id, double x, double y, double z, bool active,
-                         std::string command_key, std::string rf_qin, std::string rf_out) : Base_Drone(id, x, y,
+Command_UAV::Command_UAV(const std::string id, const std::string &type,double x, double y, double z, bool active,
+                         std::string command_key, std::string rf_qin, std::string rf_out) : Base_Drone(id,type, x, y,
                                                                                                        z,
                                                                                                        active) {
     this->command_key = command_key;
@@ -16,7 +16,9 @@ Command_UAV::Command_UAV(std::string id, double x, double y, double z, bool acti
 std::vector<shared_ptr<Base_Drone>> &Command_UAV::getSwarm() {
     return this->swarm;
 }
+std::string Command_UAV::buildPacket(std::shared_ptr<Mission> mission) {
 
+}
 bool Command_UAV::addDrone(const shared_ptr<Base_Drone> &drone) {
     try {
         this->swarm.push_back(drone);

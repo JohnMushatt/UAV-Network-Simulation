@@ -16,7 +16,7 @@
 class Command_UAV : public Base_Drone {
 public:
 
-    Command_UAV(std::string id, double x, double y, double z, bool active,
+    Command_UAV(const std::string id, const std::string &type,double x, double y, double z, bool active,
                 std::string command_key, std::string rf_in, std::string rf_out);
 
     /**
@@ -44,6 +44,7 @@ public:
      */
     bool issueOrder(std::vector<shared_ptr<Base_Drone>> targets, shared_ptr<Mission> mission);
 
+    std::string buildPacket(std::shared_ptr<Mission> mission);
 private:
     //Special key for verifying order
     std::string command_key;

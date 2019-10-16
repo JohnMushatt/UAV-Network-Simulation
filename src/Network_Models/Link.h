@@ -7,10 +7,13 @@
 
 #include "Node.h"
 #include <memory>
+
 using std::shared_ptr;
+
 class Link {
 public:
     Link(const shared_ptr<Node> &n1, const shared_ptr<Node> &n2, double weight);
+
 private:
     double weight;
 public:

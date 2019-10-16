@@ -11,13 +11,17 @@
 #include <utility>
 #include <iostream>
 #include <exception>
+
 using std::exception;
+
 #include <memory>
+
 using std::shared_ptr;
+
 class Base_Drone {
 public:
 
-    Base_Drone(const std::string &id, double x, double y, double z, bool active);
+    Base_Drone(const std::string &id, const std::string &type, double x, double y, double z, bool active);
 
     const std::string &getId() const;
 
@@ -36,12 +40,17 @@ public:
     const std::vector<std::shared_ptr<Mission>> &getPreviousMissions() const;
 
     virtual std::string buildPacket(std::shared_ptr<Mission> mission);
+
     const std::shared_ptr<Mission> &getCurrentMission() const;
 
     void setCurrentMission(const std::shared_ptr<Mission> &currentMission);
 
 private:
-    std::string id;
+    std::string id, type;
+public:
+    const std::string &getType() const;
+
+private:
     double x, y, z;
     bool active;
     std::shared_ptr<Mission> current_mission;

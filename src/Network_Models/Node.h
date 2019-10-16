@@ -31,6 +31,10 @@ private:
      * Current drone at node
      */
     shared_ptr<Base_Drone> drone;
+public:
+    const shared_ptr<Base_Drone> &getDrone() const;
+
+private:
     /**
      * Activity status
      */

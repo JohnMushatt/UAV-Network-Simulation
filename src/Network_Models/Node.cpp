@@ -17,7 +17,12 @@ const shared_ptr<Base_Drone> &Node::removeDrone() {
     shared_ptr<Base_Drone> drone = this->drone;
     this->drone = nullptr;
 }
+
 //TODO Maybe have return type be whatever previous drone was here?
 bool Node::setDrone(const shared_ptr<Base_Drone> &drone) {
-    this->drone=drone;
+    this->drone = drone;
+}
+
+const shared_ptr<Base_Drone> &Node::getDrone() const {
+    return drone;
 }

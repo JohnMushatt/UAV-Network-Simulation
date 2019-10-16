@@ -11,7 +11,6 @@ Link::Link(const shared_ptr<Node> &n1, const shared_ptr<Node> &n2, double weight
 }
 
 double Link::getWeight() const {
-    return weight;
 }
 
 const shared_ptr<Node> &Link::getN1() const {
