@@ -5,5 +5,9 @@ CMakeFiles/uav_sim.dir/main.cpp.o: ../Drones/Base_Drone.h
 CMakeFiles/uav_sim.dir/main.cpp.o: ../Drones/Basic_UAV.h
 CMakeFiles/uav_sim.dir/main.cpp.o: ../Drones/Command_UAV.h
 CMakeFiles/uav_sim.dir/main.cpp.o: ../Missions/Mission.h
+CMakeFiles/uav_sim.dir/main.cpp.o: ../Network_Models/Link.h
+CMakeFiles/uav_sim.dir/main.cpp.o: ../Network_Models/Model.h
+CMakeFiles/uav_sim.dir/main.cpp.o: ../Network_Models/Network.h
+CMakeFiles/uav_sim.dir/main.cpp.o: ../Network_Models/Node.h
 CMakeFiles/uav_sim.dir/main.cpp.o: ../main.cpp
 

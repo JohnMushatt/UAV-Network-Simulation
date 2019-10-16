@@ -4,6 +4,14 @@
 
 #include "Network.h"
 
+Network::Network(vector<shared_ptr<Base_Drone>> &drones) {
+    this->drones = drones;
+}
+
+Network::Network() {
+
+}
+
 bool Network::addNode(const shared_ptr<Node> &node) {
     //Try to add node to vector
     try {
@@ -18,7 +26,7 @@ bool Network::addNode(const shared_ptr<Node> &node) {
     }
         //Catch exception if we cannot add to it
     catch (exception &e) {
-        std::cout << "Error caught in adding node: " << e.what() << std::endl;
+        std::cerr << "Error caught in adding node: " << e.what() << std::endl;
         return false;
     }
 
@@ -28,13 +36,33 @@ bool Network::addDrone(const shared_ptr<Base_Drone> &drone) {
     try {
         if (this->drones.size() < network_limit) {
             this->drones.push_back(drone);
+            std::cout<<"Succesfully added drone!"<<std::endl;
+
             return true;
         } else {
             return false;
         }
     }
     catch (exception &e) {
-        std::cout << "Error with adding drone: " << e.what() << std::endl;
+        std::cerr << "Error with adding drone: " << e.what() << std::endl;
+    }
+}
+
+bool Network::addDrone(const vector<shared_ptr<Base_Drone>> &drone) {
+    try {
+        if (this->drones.size() + drone.size() < network_limit) {
+            for (size_t i = 0; i < drone.size(); i++) {
+                this->drones.push_back(drone.at(i));
+                std::cout<<"Succesfully added drone!"<<std::endl;
+                return true;
+            }
+
+        } else {
+            return false;
+        }
+    }
+    catch (exception &e) {
+        std::cerr << "Error adding list of drone: " << e.what() << std::endl;
     }
 }
 
@@ -61,7 +89,11 @@ bool Network::setNetworkModel(shared_ptr<Model> &model) {
         return true;
     }
     catch (exception &e) {
-        std::cout << "Error with setting network model: " << e.what() << std::endl;
+        std::cerr << "Error with setting network model: " << e.what() << std::endl;
         return false;
     }
+}
+
+void Network::setNetworkLimit(unsigned int limit) {
+    this->network_limit=limit;
 }

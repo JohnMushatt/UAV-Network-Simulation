@@ -14,10 +14,6 @@ chrono
 string
 -
 
-/cygdrive/c/Users/johnm/CLionProjects/uav_sim/src/Drones/Base_Drone.cpp
-Base_Drone.h
-/cygdrive/c/Users/johnm/CLionProjects/uav_sim/src/Drones/Base_Drone.h
-
 /cygdrive/c/Users/johnm/CLionProjects/uav_sim/src/Drones/Base_Drone.h
 string
 -
@@ -33,14 +29,6 @@ exception
 -
 memory
 -
-
-/cygdrive/c/Users/johnm/CLionProjects/uav_sim/src/Drones/Basic_UAV.cpp
-Basic_UAV.h
-/cygdrive/c/Users/johnm/CLionProjects/uav_sim/src/Drones/Basic_UAV.h
-
-/cygdrive/c/Users/johnm/CLionProjects/uav_sim/src/Drones/Basic_UAV.h
-Base_Drone.h
-/cygdrive/c/Users/johnm/CLionProjects/uav_sim/src/Drones/Base_Drone.h
 
 /cygdrive/c/Users/johnm/CLionProjects/uav_sim/src/Drones/Command_UAV.cpp
 Command_UAV.h

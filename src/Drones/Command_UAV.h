@@ -16,14 +16,34 @@
 class Command_UAV : public Base_Drone {
 public:
 
-    Command_UAV( std::string id, double x, double y, double z, bool active,
+    Command_UAV(std::string id, double x, double y, double z, bool active,
                 std::string command_key, std::string rf_in, std::string rf_out);
 
+    /**
+     * Adds drone to the sawrm if possible
+     * @param drone Drone to add to swarm
+     * @return True if succesfully added drone to the swarm
+     */
     bool addDrone(const shared_ptr<Base_Drone> &drone);
 
+    /**
+     * Returns the current swarm associated with the command uav
+     * @return Vector containing shared_ptr<Base_Drone> objects that are
+     *         part of the current swarm
+     */
+    std::vector<shared_ptr<Base_Drone>> &getSwarm();
 
-
+    /**
+     * Send a message to the current swarm
+     * Message should propogate to only drones within the current network,
+     * however this message will be relayed across the network through other drones
+     * if thge target(s) is outside of the swarm
+     * @param targets Vector containing target drone(s) to receive message
+     * @param mission Mission to give to target drone(s)
+     * @return True if message was succesfully delivered
+     */
     bool issueOrder(std::vector<shared_ptr<Base_Drone>> targets, shared_ptr<Mission> mission);
+
 private:
     //Special key for verifying order
     std::string command_key;

@@ -14,7 +14,25 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b42670ab-4f1b-442c-9d86-c87fd38f17f7" name="Default Changelist" comment="" />
+    <list default="true" id="b42670ab-4f1b-442c-9d86-c87fd38f17f7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Drones/Command_UAV.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drones/Command_UAV.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Drones/Command_UAV.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drones/Command_UAV.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Network_Models/Network.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network_Models/Network.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Network_Models/Network.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network_Models/Network.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/uav_sim.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/uav_sim.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/uav_sim.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/uav_sim.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/uav_sim.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/uav_sim.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/uav_sim.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/uav_sim.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cmake-build-debug/Drones/CMakeFiles/DronesCore.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmake-build-debug/Drones/CMakeFiles/DronesCore.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cmake-build-debug/Drones/CMakeFiles/DronesCore.dir/Command_UAV.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmake-build-debug/Drones/CMakeFiles/DronesCore.dir/Command_UAV.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cmake-build-debug/Drones/libDronesCore.a" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmake-build-debug/Drones/libDronesCore.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cmake-build-debug/Network_Models/CMakeFiles/Network_Models_Core.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmake-build-debug/Network_Models/CMakeFiles/Network_Models_Core.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cmake-build-debug/Network_Models/CMakeFiles/Network_Models_Core.dir/Network.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmake-build-debug/Network_Models/CMakeFiles/Network_Models_Core.dir/Network.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cmake-build-debug/Network_Models/libNetwork_Models_Core.a" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmake-build-debug/Network_Models/libNetwork_Models_Core.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cmake-build-debug/uav_sim.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmake-build-debug/uav_sim.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +135,8 @@
       <workItem from="1571090414345" duration="1517000" />
       <workItem from="1571091946743" duration="13857000" />
       <workItem from="1571157829240" duration="6252000" />
-      <workItem from="1571175632261" duration="9919000" />
+      <workItem from="1571175632261" duration="10226000" />
+      <workItem from="1571217049162" duration="2561000" />
     </task>
     <servers />
   </component>
@@ -129,10 +148,28 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/main.cpp</url>
+          <line>36</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/Network_Models/Network.cpp</url>
+          <line>52</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

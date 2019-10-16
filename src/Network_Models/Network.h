@@ -8,6 +8,7 @@
 #include "Node.h"
 #include "Model.h"
 #include "Link.h"
+#include "Drones/Base_Drone.h"
 #include <iostream>
 #include <memory>
 
@@ -23,6 +24,10 @@ using std::vector;
 
 class Network {
 public:
+    Network();
+
+    Network(vector<shared_ptr<Base_Drone>> &drones);
+
     /**
      * Sets the current network model to a certain type e.g. star, mesh, tree, etc.
      * @return True if succesfully changed network model
@@ -35,12 +40,16 @@ public:
      * @return True if succesfully added node to network
      */
     bool addNode(const shared_ptr<Node> &node);
+
     /**
      * Attempts to add a Base_Drone object to the network
      * @param drone Object of type Base_Drone to add
      * @return True if succesfully added object
      */
     bool addDrone(const shared_ptr<Base_Drone> &drone);
+
+    bool addDrone(const vector<shared_ptr<Base_Drone>> &drone);
+
     /**
      * Adds a link between two existing nodes
      * @param n1 Source node to link
@@ -59,18 +68,24 @@ public:
      *         most likely be mutexed/locked in some way to ensure that computed path is
      *         the most optimzed path at the current time given the search method.
      */
-    vector<shared_ptr<Node>> getShortestPath(shared_ptr<Node> src, shared_ptr<Node> des, int method);
+    vector<shared_ptr<Node>> getShortestPath(const shared_ptr<Node> src, const shared_ptr<Node> des, int method);
 
     /**
      * Updates the network based on new nodes, links, and status of nodes. The update to the network
      * is based on the current network model/policy
      * MESH MODE : Applies the self-healing model to retain connectivity of network
-     * TREE MODE : TBD
-     * STAR MODE : TBD
-     * GRID MODE : TBD
+     * TREE MODE : TODO
+     * STAR MODE : TODO
+     * GRID MODE : TODO
      * @return
      */
     vector<shared_ptr<Node>> updateNetwork();
+
+    /**
+     * Sets the network limit for # of drones per command uav
+     * @param limit # of drones allowed per command uav
+     */
+    void setNetworkLimit(unsigned int limit);
 
 private:
     /**

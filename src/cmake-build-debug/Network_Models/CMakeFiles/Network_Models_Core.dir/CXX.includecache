@@ -30,10 +30,6 @@ chrono
 string
 -
 
-/cygdrive/c/Users/johnm/CLionProjects/uav_sim/src/Network_Models/Link.cpp
-Link.h
-/cygdrive/c/Users/johnm/CLionProjects/uav_sim/src/Network_Models/Link.h
-
 /cygdrive/c/Users/johnm/CLionProjects/uav_sim/src/Network_Models/Link.h
 Node.h
 /cygdrive/c/Users/johnm/CLionProjects/uav_sim/src/Network_Models/Node.h
@@ -53,6 +49,8 @@ Model.h
 /cygdrive/c/Users/johnm/CLionProjects/uav_sim/src/Network_Models/Model.h
 Link.h
 /cygdrive/c/Users/johnm/CLionProjects/uav_sim/src/Network_Models/Link.h
+Drones/Base_Drone.h
+/cygdrive/c/Users/johnm/CLionProjects/uav_sim/src/Network_Models/Drones/Base_Drone.h
 iostream
 -
 memory
@@ -61,10 +59,6 @@ exception
 -
 vector
 -
-
-/cygdrive/c/Users/johnm/CLionProjects/uav_sim/src/Network_Models/Node.cpp
-Node.h
-/cygdrive/c/Users/johnm/CLionProjects/uav_sim/src/Network_Models/Node.h
 
 /cygdrive/c/Users/johnm/CLionProjects/uav_sim/src/Network_Models/Node.h
 Drones/Base_Drone.h
