@@ -1,2 +1,0 @@
-/usr/bin/ar.exe qc libNetwork_Models_Core.a  CMakeFiles/Network_Models_Core.dir/Network.cpp.o CMakeFiles/Network_Models_Core.dir/Model.cpp.o CMakeFiles/Network_Models_Core.dir/Node.cpp.o CMakeFiles/Network_Models_Core.dir/Link.cpp.o
-/usr/bin/ranlib.exe libNetwork_Models_Core.a

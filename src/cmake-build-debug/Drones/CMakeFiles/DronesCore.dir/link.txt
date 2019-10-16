@@ -1,2 +1,0 @@
-/usr/bin/ar.exe qc libDronesCore.a  CMakeFiles/DronesCore.dir/Basic_UAV.cpp.o CMakeFiles/DronesCore.dir/Base_Drone.cpp.o CMakeFiles/DronesCore.dir/Command_UAV.cpp.o
-/usr/bin/ranlib.exe libDronesCore.a

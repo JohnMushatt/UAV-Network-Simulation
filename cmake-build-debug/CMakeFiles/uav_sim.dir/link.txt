@@ -1,1 +1,0 @@
-/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/uav_sim.dir/main.cpp.o  -o uav_sim.exe -Wl,--out-implib,libuav_sim.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
