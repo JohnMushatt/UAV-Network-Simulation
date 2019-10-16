@@ -1,0 +1,1 @@
+add_library(Network_Models_Core Network.cpp Network.h Model.cpp Model.h Node.cpp Node.h Link.cpp Link.h)

@@ -1,0 +1,2 @@
+/usr/bin/ar.exe qc libMissionsCore.a  CMakeFiles/MissionsCore.dir/Mission.cpp.o
+/usr/bin/ranlib.exe libMissionsCore.a

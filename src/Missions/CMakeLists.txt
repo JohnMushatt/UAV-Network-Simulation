@@ -1,0 +1,1 @@
+add_library(MissionsCore Mission.cpp Mission.h)
