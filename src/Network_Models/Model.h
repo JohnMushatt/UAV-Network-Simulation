@@ -7,7 +7,15 @@
 
 
 class Model {
-
+public:
+private:
+    enum  policy{
+    MESH,
+    STAR,
+    TREE,
+    CHAIN,
+    GRID
+    };
 };
 
 
