@@ -21,7 +21,8 @@ using std::shared_ptr;
 class Base_Drone {
 public:
 
-    Base_Drone(const std::string &id, const std::string &type, double x, double y, double z, bool active);
+    Base_Drone(const std::string &id, const std::string &type, double x, double y, double z,
+               bool active);
 
     const std::string &getId() const;
 
@@ -45,10 +46,12 @@ public:
 
     void setCurrentMission(const std::shared_ptr<Mission> &currentMission);
 
+    const std::string &getType() const;
+
 private:
     std::string id, type;
 public:
-    const std::string &getType() const;
+    const std::string &getCmdId() const;
 
 private:
     double x, y, z;

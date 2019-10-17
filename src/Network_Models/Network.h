@@ -107,9 +107,37 @@ public:
      */
     void displayNetwork();
 
+    /**
+     * Initialize the network to the default state.
+     * All command uavs are connected to each of their swarm drones.
+     * Each drone that is part of a swarm is connected to both their command uav
+     * and each of the drones in the swarm.
+     * This means that each swarm's state is independent of other swarms after
+     * this function returns
+     */
     void initNetwork();
 
 private:
+    /**
+     * Private helper methods
+     */
+    /**
+     * Links all drones to their current commander
+     */
+    void linkDronesToCommander();
+
+    /**
+     * Links all drones contained within the vector to their current commander
+     * @param drones Vector containing shared_ptr<Base_Drone> objects to be linked
+     */
+    void linkDronesToCommander(const vector<shared_ptr<Base_Drone>> &drones);
+    /**
+     * Checks if their is an existing link between the two nodes
+     * @param n1 Node 1
+     * @param n2 Node 2
+     * @return True if n1 and n2 have a link between each other
+     */
+    bool linkExists(const shared_ptr<Node> &n1, const shared_ptr<Node> &n2);
     /**
      * node_list contains the current list of nodes within the network. Includes both
      * connected and unconnected nodes.

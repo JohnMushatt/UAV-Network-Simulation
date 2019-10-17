@@ -37,6 +37,10 @@ bool Network::addDrone(const shared_ptr<Base_Drone> &drone) {
         if (this->drones.size() < network_limit) {
             this->drones.push_back(drone);
             std::cout << "Succesfully added drone!" << std::endl;
+            if (drone->getType().compare(std::string("cmd")) == 0) {
+                shared_ptr<Command_UAV> cmd = std::shared_ptr<Command_UAV>(static_cast<Command_UAV *>(drone.get()));
+                this->cmd_drones.push_back(cmd);
+            }
 
             return true;
         } else {
@@ -113,14 +117,17 @@ void Network::initNetwork() {
              * This is most likely violating a major policy of polymorphism/inheritance but not fixing right now!
              */
             if (this->drones.at(j)->getType().compare(std::string("basic_uav")) == 0) {
-                shared_ptr<Basic_UAV> dr = shared_ptr<Basic_UAV>(static_cast<Basic_UAV *>(this->drones.at(j).get()));
+                Basic_UAV *uav = static_cast<Basic_UAV *>(this->drones.at(j).get());
+                shared_ptr<Basic_UAV> dr = std::make_shared<Basic_UAV>(*uav);
                 /**
                  * If we have a drone that is part of the swarm
                  */
                 if (dr->getCmdId().compare(cmdr->getId()) == 0) {
                     shared_ptr<Node> drone_node = this->findNode(dr->getId());
-                    shared_ptr<Link> link = std::make_shared<Link>(cmdr_node, drone_node, i + j);
+                    shared_ptr<Link> link = std::make_shared<Link>(cmdr_node, drone_node, 1 + i + j);
                     link_list.push_back(link);
+                    std::cout << "Link between nodes (" << link->getN1()->getDrone()->getId() << ","
+                              << link->getN2()->getDrone()->getId() << ") created!" << std::endl;
                 }
             }
         }
@@ -153,6 +160,7 @@ void Network::displayNetwork() {
     for (size_t i = 0; i < this->drones.size(); i++) {
         if (this->drones.at(i)->getType().compare(std::string("cmd")) == 0) {
             Command_UAV *current_drone = static_cast< Command_UAV *>(this->drones.at(i).get());
+            shared_ptr<Command_UAV> cmd = std::make_shared<Command_UAV>(*current_drone);
             cout << "ID: " << current_drone->getId() << " | Drones under control: "
                  << std::to_string(current_drone->getSwarm().size()) << endl;
         }
@@ -161,9 +169,11 @@ void Network::displayNetwork() {
     cout << "**********Basic drones in the network**********" << endl;
     for (size_t i = 0; i < this->drones.size(); i++) {
         if (this->drones.at(i)->getType().compare(std::string("basic_uav")) == 0) {
-            shared_ptr<Base_Drone> current_drone = this->drones.at(i);
-            cout << "ID: " << current_drone->getId() << " | Active status: "
-                 << std::to_string(current_drone->isActive()) << endl;
+            Basic_UAV *current_drone = static_cast<Basic_UAV *>(this->drones.at(i).get());
+            shared_ptr<Basic_UAV> basic_uav = std::make_shared<Basic_UAV>(*current_drone);
+            cout << "ID: " << basic_uav->getId() << " Current command drone: " << basic_uav->getCmdId()
+                 << " | Active status: "
+                 << std::to_string(basic_uav->isActive()) << endl;
         }
 
     }
@@ -183,4 +193,26 @@ bool Network::setNetworkModel(shared_ptr<Model> &model) {
 
 void Network::setNetworkLimit(unsigned int limit) {
     this->network_limit = limit;
+}
+
+bool Network::linkExists(const shared_ptr<Node> &n1, const shared_ptr<Node> &n2) {
+    for (size_t i = 0; i < this->link_list.size(); i++) {
+        const shared_ptr<Link> link = this->link_list.at(i);
+        if ((link->getN1() == n1) && (link->getN2() == n2)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+void Network::linkDronesToCommander(const vector<shared_ptr<Base_Drone>> &drones) {
+    /**
+     * Loop through the vector of drones
+     */
+    for (size_t i = 0; i < drones.size(); i++) {
+
+        for (size_t j = 0; j <node_list.size();j++) {
+            
+        }
+    }
 }

@@ -5,7 +5,7 @@
 #include "Command_UAV.h"
 
 Command_UAV::Command_UAV(const std::string id, const std::string &type,double x, double y, double z, bool active,
-                         std::string command_key, std::string rf_qin, std::string rf_out) : Base_Drone(id,type, x, y,
+                         std::string command_key, std::string rf_in, std::string rf_out) : Base_Drone(id,type, x, y,
                                                                                                        z,
                                                                                                        active) {
     this->command_key = command_key;

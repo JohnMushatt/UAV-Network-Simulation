@@ -4,8 +4,9 @@
 
 #include "Basic_UAV.h"
 
-Basic_UAV::Basic_UAV(const std::string &id, const std::string &type, double x, double y, double z, bool active)
+Basic_UAV::Basic_UAV(const std::string &id, const std::string &type, const std::string &cmd_id,double x, double y, double z, bool active)
         : Base_Drone(id, type, x, y, z, active) {
+    this->cmd_id=cmd_id;
 
 }
 

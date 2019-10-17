@@ -26,6 +26,12 @@ public:
      * @return True if succesfully set drone
      */
     bool setDrone(const shared_ptr<Base_Drone> &drone);
+    /**
+     * Equals operator overload
+     * @param obj Objected to check against
+     * @return True if this = obj
+     */
+    bool operator == (Node const &obj);
 private:
     /**
      * Current drone at node

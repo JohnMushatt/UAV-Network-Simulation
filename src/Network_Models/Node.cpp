@@ -12,7 +12,12 @@ Node::Node(const shared_ptr<Base_Drone> &drone) {
 void Node::flipStatus() {
     this->active = !this->active;
 }
-
+bool Node::operator==(Node const &obj) {
+    if(this->getDrone()->getId().compare(obj.getDrone()->getId())==0) {
+        return true;
+    }
+    return false;
+}
 const shared_ptr<Base_Drone> &Node::removeDrone() {
     shared_ptr<Base_Drone> drone = this->drone;
     this->drone = nullptr;

@@ -1,5 +1,8 @@
 #include <iostream>
 #include <vector>
+#include <chrono>
+#include <thread>
+
 #include "Drones/Base_Drone.h"
 #include "Drones/Command_UAV.h"
 #include "Drones/Basic_UAV.h"
@@ -23,9 +26,18 @@ int main() {
     std::cin >> cmd_cnt;
     std::cout << std::endl;
     for (int i = 0; i < cmd_cnt; i++) {
+        std::string id = std::string("cmd_") + std::to_string(i);
+        std::string type("cmd");
+        double x = i;
+        double y = i;
+        double z = i;
+        bool active = false;
+        std::string cmd_key = std::to_string(i);
+        std::string rf_in = std::to_string(i);
+        std::string rf_out = std::to_string(i);
+
         std::shared_ptr<Command_UAV> cmdr = std::make_shared<Command_UAV>(
-                std::to_string(i), std::string("cmd"), i, i, i, false, std::to_string(i), std::to_string(i),
-                std::to_string(i));
+                id, type, x, y, z, active, cmd_key, rf_in, rf_out);
         cmd_drones.push_back(cmdr);
         std::cout << "Successfully added command uav with id: " << cmdr->getId() << std::endl;
     }
@@ -33,12 +45,21 @@ int main() {
     std::cout << std::endl << "How many drones per swarm? ";
     unsigned int swarm_cnt;
     std::cin >> swarm_cnt;
+    unsigned int count =0;
     for (int c = 0; c < cmd_cnt; c++) {
         for (int i = 0; i < swarm_cnt; i++) {
-            std::shared_ptr<Base_Drone> drone = std::make_shared<Basic_UAV>(std::to_string(i + c),
-                                                                            std::string("basic_uav"), i, i, i, false);
+            std::string id = std::to_string(count);
+            std::string type("basic_uav");
+            double x = i;
+            double y = i;
+            double z = i;
+            bool active = false;
+            std::string cmd_id = cmd_drones.at(c)->getId();
+            std::string rf_in = std::to_string(i);
+            std::string rf_out = std::to_string(i);
+            std::shared_ptr<Base_Drone> drone = std::make_shared<Basic_UAV>(id, type, cmd_id, x, y, z, active);
             cmd_drones.at(c)->addDrone(drone);
-
+            count++;
         }
     }
 
@@ -55,6 +76,11 @@ int main() {
          */
         network->addDrone(cmdr->getSwarm());
     }
+    std::cout << "\nDisplaying drones in the network..." << std::endl;
+    std::this_thread::sleep_for(std::chrono_literals::operator ""s(1));
     network->displayNetwork();
+    std::cout << "\nInitializing Network..." << std::endl;
+    std::this_thread::sleep_for(std::chrono_literals::operator ""s(2));
+    network->initNetwork();
     return 0;
 }
