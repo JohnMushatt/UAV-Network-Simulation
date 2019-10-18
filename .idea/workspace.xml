@@ -24,14 +24,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b42670ab-4f1b-442c-9d86-c87fd38f17f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Google_test/Test_Class_Node.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Google_test/Test_Class_Network.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Drones/Base_Drone.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drones/Base_Drone.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Google_test/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Google_test/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Google_test/Test_Class_Link.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Google_test/Test_Class_Link.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Network_Models/Link.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network_Models/Link.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Network_Models/Node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network_Models/Node.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Network_Models/Node.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network_Models/Node.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Network_Models/Network.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network_Models/Network.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Network_Models/Network.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network_Models/Network.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -96,8 +95,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Google Test.All in Test_Class_Node.cpp">
-    <configuration name="All in Test_Class_Link.cpp and 1 more" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="uav_sim" TARGET_NAME="Google_Tests_run" RUN_TARGET_PROJECT_NAME="uav_sim" RUN_TARGET_NAME="Google_Tests_run" TEST_PATTERN="all-tests(file://$PROJECT_DIR$/src/Google_test/Test_Class_Link.cpp):all-tests(file://$PROJECT_DIR$/src/Google_test/Test_Class_Node.cpp)" TEST_MODE="PATTERN">
+  <component name="RunManager" selected="Google Test.All in Test_Class_Link.cpp and 2 more">
+    <configuration name="All in Test_Class_Link.cpp and 1 more" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="uav_sim" TARGET_NAME="Google_Tests_run" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="uav_sim" RUN_TARGET_NAME="Google_Tests_run" TEST_PATTERN="all-tests(file://$PROJECT_DIR$/src/Google_test/Test_Class_Link.cpp):all-tests(file://$PROJECT_DIR$/src/Google_test/Test_Class_Node.cpp)" TEST_MODE="PATTERN">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in Test_Class_Link.cpp and 2 more" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="uav_sim" TARGET_NAME="Google_Tests_run" RUN_TARGET_PROJECT_NAME="uav_sim" RUN_TARGET_NAME="Google_Tests_run" TEST_PATTERN="all-tests(file://$PROJECT_DIR$/src/Google_test/Test_Class_Link.cpp):all-tests(file://$PROJECT_DIR$/src/Google_test/Test_Class_Network.cpp):all-tests(file://$PROJECT_DIR$/src/Google_test/Test_Class_Node.cpp)" TEST_MODE="PATTERN">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
@@ -109,13 +114,13 @@
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in Test_Class_Node.cpp" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="uav_sim" TARGET_NAME="Google_Tests_run" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="uav_sim" RUN_TARGET_NAME="Google_Tests_run" TEST_PATTERN="all-tests(file://$PROJECT_DIR$/src/Google_test/Test_Class_Node.cpp)" TEST_MODE="PATTERN">
+    <configuration name="All in Test_Class_Network.cpp" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="uav_sim" TARGET_NAME="Google_Tests_run" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="uav_sim" RUN_TARGET_NAME="Google_Tests_run" TEST_PATTERN="all-tests(file://$PROJECT_DIR$/src/Google_test/Test_Class_Network.cpp)" TEST_MODE="PATTERN">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Link_Tests" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="uav_sim" TARGET_NAME="Google_Tests_run" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="uav_sim" RUN_TARGET_NAME="Google_Tests_run" TEST_CLASS="Link_Tests" TEST_MODE="SUITE_TEST">
+    <configuration name="All in Test_Class_Node.cpp" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="uav_sim" TARGET_NAME="Google_Tests_run" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="uav_sim" RUN_TARGET_NAME="Google_Tests_run" TEST_PATTERN="all-tests(file://$PROJECT_DIR$/src/Google_test/Test_Class_Node.cpp)" TEST_MODE="PATTERN">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
@@ -166,20 +171,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Unittests in Google_test" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="untitled" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/Google_test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/src/Google_test&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="CMake Application.uav_sim" />
       <item itemvalue="CMake Application.DronesCore" />
@@ -191,18 +182,18 @@
       <item itemvalue="CMake Application.MissionsCore" />
       <item itemvalue="CMake Application.Network_Models_Core" />
       <item itemvalue="Google Test.All in Test_Class_Link.cpp" />
-      <item itemvalue="Google Test.Link_Tests" />
-      <item itemvalue="Python tests.Unittests in Google_test" />
       <item itemvalue="Google Test.All in Test_Class_Node.cpp" />
       <item itemvalue="Google Test.All in Test_Class_Link.cpp and 1 more" />
+      <item itemvalue="Google Test.All in Test_Class_Network.cpp" />
+      <item itemvalue="Google Test.All in Test_Class_Link.cpp and 2 more" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Google Test.All in Test_Class_Link.cpp and 2 more" />
+        <item itemvalue="Google Test.All in Test_Class_Network.cpp" />
         <item itemvalue="Google Test.All in Test_Class_Node.cpp" />
         <item itemvalue="Google Test.All in Test_Class_Link.cpp and 1 more" />
         <item itemvalue="Google Test.All in Test_Class_Link.cpp" />
-        <item itemvalue="Python tests.Unittests in Google_test" />
-        <item itemvalue="Google Test.Link_Tests" />
       </list>
     </recent_temporary>
   </component>
@@ -225,7 +216,7 @@
       <workItem from="1571175632261" duration="10226000" />
       <workItem from="1571217049162" duration="2748000" />
       <workItem from="1571247381803" duration="23976000" />
-      <workItem from="1571351575319" duration="14562000" />
+      <workItem from="1571351575319" duration="18274000" />
     </task>
     <servers />
   </component>

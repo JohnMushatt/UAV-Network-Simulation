@@ -48,6 +48,9 @@ TEST_F(Link_Tests, Valid_Construction) {
     EXPECT_EQ(test_link->getN2(), n2);
     EXPECT_EQ(test_link->getWeight(), 1);
 }
+TEST_F(Link_Tests, Invalid_Construction) {
+    EXPECT_ANY_THROW(std::make_shared<Link>(n1,n1,1));
+}
 /**
  * Tests the constructor of Link when given a nullptr Node object
  */

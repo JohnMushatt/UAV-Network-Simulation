@@ -35,10 +35,12 @@ bool Network::addNode(const shared_ptr<Node> &node) {
 bool Network::addDrone(const shared_ptr<Base_Drone> &drone) {
     try {
         if (this->drones.size() < network_limit) {
+
             this->drones.push_back(drone);
             std::cout << "Succesfully added drone!" << std::endl;
-            if (drone->getType().compare(std::string("cmd")) == 0) {
-                shared_ptr<Command_UAV> cmd = std::shared_ptr<Command_UAV>(static_cast<Command_UAV *>(drone.get()));
+            if (drone->getType() == std::string("cmd")) {
+
+                shared_ptr<Command_UAV> cmd = std::static_pointer_cast<Command_UAV>(drone);
                 this->cmd_drones.push_back(cmd);
             }
 
@@ -86,6 +88,32 @@ bool Network::addLink(const shared_ptr<Node> &n1, const shared_ptr<Node> &n2, do
     }
 
 }
+
+bool Network::removeDrone(const shared_ptr<Base_Drone> &drone) {
+    for (size_t i = 0; i < this->drones.size(); i++) {
+        shared_ptr<Base_Drone> dr = this->drones.at(i);
+        if (dr == drone) {
+            //this->drones.at(i) = nullptr;
+            this->drones.erase(this->drones.begin() + i);
+            std::cout<<"Succesfully removed drone"<<std::endl;
+            return true;
+        }
+    }
+    return false;
+}
+
+bool Network::removeNode(const shared_ptr<Node> &node) {
+    for (size_t i = 0; i < this->node_list.size(); i++) {
+        shared_ptr<Node> n = this->node_list.at(i);
+        if (n == node) {
+            this->node_list.erase(this->node_list.begin() + i);
+            std::cout<<"Succesfully removed node"<<std::endl;
+            return true;
+        }
+    }
+    return false;
+}
+
 
 void Network::initNetwork() {
     /**
@@ -136,7 +164,7 @@ void Network::initNetwork() {
 
 shared_ptr<Node> Network::findNode(const std::string &id) {
     for (size_t i = 0; i < this->node_list.size(); i++) {
-        if (this->node_list.at(i)->getDrone()->getId().compare(id) == 0) {
+        if (this->node_list.at(i)->getDrone()->getId() == (id)) {
             return this->node_list.at(i);
         }
     }
@@ -193,6 +221,7 @@ bool Network::setNetworkModel(shared_ptr<Model> &model) {
 void Network::setNetworkLimit(unsigned int limit) {
     this->network_limit = limit;
 }
+
 //TODO needs to be tested!
 bool Network::linkExists(const shared_ptr<Node> &n1, const shared_ptr<Node> &n2) {
     for (size_t i = 0; i < this->link_list.size(); i++) {
@@ -242,7 +271,7 @@ bool Network::linkSwarm(const vector<shared_ptr<Base_Drone>> &drones) {
 
         for (size_t j = 0; j < drones.size(); j++) {
             shared_ptr<Base_Drone> other_drone = drones.at(j);
-            if(other_drone) {
+            if (other_drone) {
 
             }
         }
