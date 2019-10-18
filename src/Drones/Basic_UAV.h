@@ -9,7 +9,7 @@
 
 class Basic_UAV : public Base_Drone {
 public:
-    Basic_UAV(const std::string &id, const std::string &type, const std::string &cmd_type, double x, double y, double z,
+    Basic_UAV(const std::string &id, const std::string &type, const std::string &cmd_id, double x, double y, double z,
               bool active);
 
     std::string buildPacket(std::shared_ptr<Mission> mission);

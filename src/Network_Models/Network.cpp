@@ -117,8 +117,8 @@ void Network::initNetwork() {
              * This is most likely violating a major policy of polymorphism/inheritance but not fixing right now!
              */
             if (this->drones.at(j)->getType().compare(std::string("basic_uav")) == 0) {
-                Basic_UAV *uav = static_cast<Basic_UAV *>(this->drones.at(j).get());
-                shared_ptr<Basic_UAV> dr = std::make_shared<Basic_UAV>(*uav);
+                //Basic_UAV *uav = static_cast<Basic_UAV *>(this->drones.at(j).get());
+                shared_ptr<Basic_UAV> dr = std::static_pointer_cast<Basic_UAV>(this->drones.at(j));
                 /**
                  * If we have a drone that is part of the swarm
                  */
@@ -145,7 +145,6 @@ shared_ptr<Node> Network::findNode(const std::string &id) {
 
 /**
  * Displays the current status of the network
- * //TODO Add cmd id when printing out the basic drones
  */
 void Network::displayNetwork() {
 
@@ -159,18 +158,18 @@ void Network::displayNetwork() {
     cout << "**********Command drones in the network**********" << endl;
     for (size_t i = 0; i < this->drones.size(); i++) {
         if (this->drones.at(i)->getType().compare(std::string("cmd")) == 0) {
-            Command_UAV *current_drone = static_cast< Command_UAV *>(this->drones.at(i).get());
-            shared_ptr<Command_UAV> cmd = std::make_shared<Command_UAV>(*current_drone);
-            cout << "ID: " << current_drone->getId() << " | Drones under control: "
-                 << std::to_string(current_drone->getSwarm().size()) << endl;
+            //Command_UAV *current_drone = static_cast< Command_UAV *>(this->drones.at(i).get());
+            shared_ptr<Command_UAV> cmd = std::static_pointer_cast<Command_UAV>(this->drones.at(i));
+            cout << "ID: " << cmd->getId() << " | Drones under control: "
+                 << std::to_string(cmd->getSwarm().size()) << endl;
         }
 
     }
     cout << "**********Basic drones in the network**********" << endl;
     for (size_t i = 0; i < this->drones.size(); i++) {
         if (this->drones.at(i)->getType().compare(std::string("basic_uav")) == 0) {
-            Basic_UAV *current_drone = static_cast<Basic_UAV *>(this->drones.at(i).get());
-            shared_ptr<Basic_UAV> basic_uav = std::make_shared<Basic_UAV>(*current_drone);
+            //Basic_UAV *current_drone = static_cast<Basic_UAV *>(this->drones.at(i).get());
+            shared_ptr<Basic_UAV> basic_uav = std::static_pointer_cast<Basic_UAV>(this->drones.at(i));
             cout << "ID: " << basic_uav->getId() << " Current command drone: " << basic_uav->getCmdId()
                  << " | Active status: "
                  << std::to_string(basic_uav->isActive()) << endl;
@@ -194,11 +193,14 @@ bool Network::setNetworkModel(shared_ptr<Model> &model) {
 void Network::setNetworkLimit(unsigned int limit) {
     this->network_limit = limit;
 }
-
+//TODO needs to be tested!
 bool Network::linkExists(const shared_ptr<Node> &n1, const shared_ptr<Node> &n2) {
     for (size_t i = 0; i < this->link_list.size(); i++) {
         const shared_ptr<Link> link = this->link_list.at(i);
-        if ((link->getN1() == n1) && (link->getN2() == n2)) {
+        /**
+         * Check if either (Link_n1 == n1 and  Link_n2 == n2) OR (Link_n1 == n2 and Link_n2 == n1)
+         */
+        if (((link->getN1() == n1) && (link->getN2() == n2)) || ((link->getN1() == n2) && (link->getN2() == n1))) {
             return true;
         }
     }
@@ -210,9 +212,39 @@ void Network::linkDronesToCommander(const vector<shared_ptr<Base_Drone>> &drones
      * Loop through the vector of drones
      */
     for (size_t i = 0; i < drones.size(); i++) {
+        /**
+         * We assume that the node already exists and the drones
+         * only contains non-command_uav objects
+         */
+        /**
+         * Base drone
+         */
+        shared_ptr<Basic_UAV> drone = std::static_pointer_cast<Basic_UAV>(drones.at(i));
+        shared_ptr<Node> drone_node = this->findNode(drone->getId());
+        /**
+         * Command uav
+         */
+        shared_ptr<Node> cmd_node = this->findNode(drone->getCmdId());
+        shared_ptr<Command_UAV> cmd = std::static_pointer_cast<Command_UAV>(cmd_node->getDrone());
+        /**
+         * If there currently is no connection to the commander drone
+         */
+        if (!(this->linkExists(drone_node, cmd_node))) {
+            this->addLink(drone_node, cmd_node, i);
 
-        for (size_t j = 0; j <node_list.size();j++) {
-            
+        }
+    }
+}
+
+bool Network::linkSwarm(const vector<shared_ptr<Base_Drone>> &drones) {
+    for (size_t i = 0; i < drones.size(); i++) {
+        shared_ptr<Base_Drone> current_drone = drones.at(i);
+
+        for (size_t j = 0; j < drones.size(); j++) {
+            shared_ptr<Base_Drone> other_drone = drones.at(j);
+            if(other_drone) {
+
+            }
         }
     }
 }

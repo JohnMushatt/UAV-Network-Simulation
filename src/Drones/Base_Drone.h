@@ -48,12 +48,12 @@ public:
 
     const std::string &getType() const;
 
-private:
-    std::string id, type;
-public:
     const std::string &getCmdId() const;
 
+    bool operator==(Base_Drone const &obj);
 private:
+    std::string id, type;
+
     double x, y, z;
     bool active;
     std::shared_ptr<Mission> current_mission;

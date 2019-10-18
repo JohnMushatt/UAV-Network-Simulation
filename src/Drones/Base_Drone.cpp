@@ -52,4 +52,9 @@ void Base_Drone::setCurrentMission(const std::shared_ptr<Mission> &currentMissio
 const std::string &Base_Drone::getType() const {
     return type;
 }
-
+bool Base_Drone::operator==(Base_Drone const &obj) {
+    if(this->getId().compare(obj.getId())==0) {
+        return true;
+    }
+    return false;
+}

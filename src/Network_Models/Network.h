@@ -124,6 +124,7 @@ private:
     /**
      * Links all drones to their current commander
      */
+    //TODO
     void linkDronesToCommander();
 
     /**
@@ -132,12 +133,19 @@ private:
      */
     void linkDronesToCommander(const vector<shared_ptr<Base_Drone>> &drones);
     /**
+     * Links all drones passed in to each other to form a swarm
+     * @param drones Drones to link together
+     * @return True if succesfully conencted ALL drones
+     */
+    bool linkSwarm(const vector<shared_ptr<Base_Drone>> &drones);
+    /**
      * Checks if their is an existing link between the two nodes
      * @param n1 Node 1
      * @param n2 Node 2
      * @return True if n1 and n2 have a link between each other
      */
     bool linkExists(const shared_ptr<Node> &n1, const shared_ptr<Node> &n2);
+
     /**
      * node_list contains the current list of nodes within the network. Includes both
      * connected and unconnected nodes.
