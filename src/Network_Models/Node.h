@@ -6,41 +6,48 @@
 #define UAV_SIM_NODE_H
 
 #include "Drones/Base_Drone.h"
+
 #include <memory>
+
 using std::shared_ptr;
+
 class Node {
 public:
     Node(const shared_ptr<Base_Drone> &drone);
+
     /**
      * Flips the activity status of the node
      */
     void flipStatus();
+
     /**
      * Removes the current drone from the node and returns it
      * @return Current drone at the node
      */
-    const shared_ptr<Base_Drone> &removeDrone();
+    bool removeDrone();
+
     /**
      * Sets the current drone for the node
      * @param drone Drone to set for the node
-     * @return True if succesfully set drone
      */
-    bool setDrone(const shared_ptr<Base_Drone> &drone);
+    void setDrone(const shared_ptr<Base_Drone> &drone);
+
     /**
      * Equals operator overload
      * @param obj Objected to check against
      * @return True if this = obj
      */
-    bool operator == (Node const &obj);
+    bool operator==(Node const &obj);
+
+    const shared_ptr<Base_Drone> &getDrone() const;
+
+    const bool getStatus();
 private:
     /**
      * Current drone at node
      */
     shared_ptr<Base_Drone> drone;
-public:
-    const shared_ptr<Base_Drone> &getDrone() const;
 
-private:
     /**
      * Activity status
      */

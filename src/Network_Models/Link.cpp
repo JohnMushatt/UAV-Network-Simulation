@@ -12,7 +12,7 @@ Link::Link(const shared_ptr<Node> &n1, const shared_ptr<Node> &n2, double weight
         this->n2 = n2;
     }
 
-    if(weight < 0) {
+    if(weight <= 0) {
         throw std::invalid_argument("Weight cannot be 0 nor negative");
     }
     else {

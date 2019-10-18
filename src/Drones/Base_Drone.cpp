@@ -41,7 +41,7 @@ const std::shared_ptr<Mission> &Base_Drone::getCurrentMission() const {
     return current_mission;
 }
 
-std::string Base_Drone::buildPacket(std::shared_ptr<Mission> mission) {
+std::string Base_Drone::buildPacket(const std::shared_ptr<Mission> mission) {
     return nullptr;
 }
 
@@ -53,7 +53,7 @@ const std::string &Base_Drone::getType() const {
     return type;
 }
 bool Base_Drone::operator==(Base_Drone const &obj) {
-    if(this->getId().compare(obj.getId())==0) {
+    if(this->getId() == obj.getId()) {
         return true;
     }
     return false;
