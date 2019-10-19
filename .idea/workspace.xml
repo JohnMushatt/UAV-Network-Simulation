@@ -25,13 +25,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b42670ab-4f1b-442c-9d86-c87fd38f17f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Google_test/Test_Class_Network.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Google_test/Test_Class_Network.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Google_test/Test_Class_Node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Google_test/Test_Class_Node.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Network_Models/Link.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network_Models/Link.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Network_Models/Link.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network_Models/Link.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Network_Models/Network.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network_Models/Network.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Network_Models/Node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network_Models/Node.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Network_Models/Node.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network_Models/Node.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Network_Models/Network.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network_Models/Network.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -218,7 +213,7 @@
       <workItem from="1571217049162" duration="2748000" />
       <workItem from="1571247381803" duration="23976000" />
       <workItem from="1571351575319" duration="18410000" />
-      <workItem from="1571479868917" duration="3971000" />
+      <workItem from="1571479868917" duration="6224000" />
     </task>
     <servers />
   </component>

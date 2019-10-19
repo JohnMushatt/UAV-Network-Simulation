@@ -291,7 +291,36 @@ bool Network::linkSwarm(const vector<shared_ptr<Base_Drone>> &drones) {
     }
 }
 
-vector<shared_ptr<Node>> Network::getShortestPath(const shared_ptr<Node> src, const shared_ptr<Node> des, int method) {
-    
+vector<shared_ptr<Node>>
+Network::getShortestPath(const shared_ptr<Node> &src, const shared_ptr<Node> &des, int method) {
+
     return vector<shared_ptr<Node>>();
+}
+
+/**
+ * My shitty attempt at implementing a version of the A* algorithm for network node searching!
+ * My implementation is based on the https://www.geeksforgeeks.org/a-search-algorithm/ implementation
+ * @param src Source node to start from
+ * @param des Destination node to find
+ * @return Vector containing shared_ptr<Node> nodes that follows the shortest path from src to des
+ */
+vector<shared_ptr<Node>> Network::A_STAR(const shared_ptr<Node> &src, const shared_ptr<Node> &des) {
+    class A_STAR_NODE {
+    public:
+        shared_ptr<Node> node;
+        double d, f, g;
+
+        A_STAR_NODE(const shared_ptr<Node> &src) {
+            this->node = src;
+        }
+
+    };
+    vector<shared_ptr<A_STAR_NODE>> open_list;
+    vector<shared_ptr<A_STAR_NODE>> closed_list;
+    open_list.push_back(std::make_shared<A_STAR_NODE>(src));
+    open_list.at(0)->f = 0;
+
+    while (!open_list.empty()) {
+        // for(size_t i =0; i < this.no);
+    }
 }

@@ -70,7 +70,7 @@ public:
      *         most likely be mutexed/locked in some way to ensure that computed path is
      *         the most optimzed path at the current time given the search method.
      */
-    vector<shared_ptr<Node>> getShortestPath(const shared_ptr<Node> src, const shared_ptr<Node> des, int method);
+    vector<shared_ptr<Node>> getShortestPath(const shared_ptr<Node> &src, const shared_ptr<Node> &des, int method);
 
     /**
      * Attempts to find the node with the given string id
@@ -121,6 +121,10 @@ public:
     bool removeNode(const shared_ptr<Node> &node);
 
     bool removeLink(const shared_ptr<Link> &link);
+
+    vector<shared_ptr<Node>> A_STAR(const shared_ptr<Node> &src, const shared_ptr<Node> &des);
+
+    vector<shared_ptr<Link>> getAdjacentNodes(const shared_ptr<Node> &node);
 private:
     /**
      * Private helper methods
