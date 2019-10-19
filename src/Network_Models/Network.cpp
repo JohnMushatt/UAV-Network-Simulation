@@ -79,6 +79,7 @@ bool Network::addLink(const shared_ptr<Node> &n1, const shared_ptr<Node> &n2, do
     //TODO Check if current node can support the additional link
     try {
         shared_ptr<Link> link = std::make_shared<Link>(n1, n2, weight);
+        this->link_list.push_back(link);
         std::cout << "Added link!" << std::endl;
         return true;
     }
@@ -95,7 +96,7 @@ bool Network::removeDrone(const shared_ptr<Base_Drone> &drone) {
         if (dr == drone) {
             //this->drones.at(i) = nullptr;
             this->drones.erase(this->drones.begin() + i);
-            std::cout<<"Succesfully removed drone"<<std::endl;
+            std::cout << "Succesfully removed drone" << std::endl;
             return true;
         }
     }
@@ -107,13 +108,25 @@ bool Network::removeNode(const shared_ptr<Node> &node) {
         shared_ptr<Node> n = this->node_list.at(i);
         if (n == node) {
             this->node_list.erase(this->node_list.begin() + i);
-            std::cout<<"Succesfully removed node"<<std::endl;
+            std::cout << "Succesfully removed node" << std::endl;
             return true;
         }
     }
     return false;
 }
 
+bool Network::removeLink(const shared_ptr<Link> &link) {
+    for (size_t i = 0; i < this->link_list.size(); i++) {
+        shared_ptr<Link> l = this->link_list.at(i);
+
+        if (l->operator==(link)) {
+            this->link_list.erase(this->link_list.begin() + i);
+            std::cout << "Succesfully removed link" << std::endl;
+            return true;
+        }
+    }
+    return false;
+}
 
 void Network::initNetwork() {
     /**
@@ -276,4 +289,9 @@ bool Network::linkSwarm(const vector<shared_ptr<Base_Drone>> &drones) {
             }
         }
     }
+}
+
+vector<shared_ptr<Node>> Network::getShortestPath(const shared_ptr<Node> src, const shared_ptr<Node> des, int method) {
+    
+    return vector<shared_ptr<Node>>();
 }

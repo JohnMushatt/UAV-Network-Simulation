@@ -38,6 +38,7 @@ public:
      * @return True if this = obj
      */
     bool operator==(Node const &obj);
+    bool operator==(const shared_ptr<Node> &obj);
 
     const shared_ptr<Base_Drone> &getDrone() const;
 

@@ -25,7 +25,12 @@ bool Node::operator==(Node const &obj) {
     }
     return false;
 }
-
+bool Node::operator==(const shared_ptr<Node> &obj) {
+    if(this->getDrone()->getId() == obj->getDrone()->getId()) {
+        return true;
+    }
+    return false;
+}
 bool Node::removeDrone() {
     this->drone = nullptr;
     if (this->drone == nullptr) {

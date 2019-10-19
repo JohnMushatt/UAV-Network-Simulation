@@ -43,25 +43,29 @@ TEST_F(Nodes_Test, Valid_Constructor) {
 TEST_F(Nodes_Test, Invalid_Constructor) {
     EXPECT_ANY_THROW(std::make_shared<Node>(nullptr));
 }
-TEST_F(Nodes_Test,Test_getDrone) {
-    EXPECT_EQ(valid_node1->getDrone(),d1);
+
+TEST_F(Nodes_Test, Test_getDrone) {
+    EXPECT_EQ(valid_node1->getDrone(), d1);
 }
 
-TEST_F(Nodes_Test,Test_Equals) {
-    EXPECT_EQ(valid_node1,valid_node1);
-    EXPECT_NE(valid_node1,valid_node2);
+TEST_F(Nodes_Test, Test_Equals) {
+    EXPECT_EQ(valid_node1, valid_node1);
+    EXPECT_NE(valid_node1, valid_node2);
 }
-TEST_F(Nodes_Test,Test_setDrone) {
+
+TEST_F(Nodes_Test, Test_setDrone) {
     valid_node1->setDrone(d2);
-    EXPECT_EQ(valid_node1->getDrone(),valid_node2->getDrone());
+    EXPECT_EQ(valid_node1->getDrone(), valid_node2->getDrone());
     valid_node1->setDrone(d1);
 }
+
 TEST_F(Nodes_Test, Test_removeDrone) {
     valid_node1->removeDrone();
     EXPECT_EQ(valid_node1->getDrone(), nullptr);
     valid_node1->setDrone(d1);
 }
-TEST_F(Nodes_Test,Test_flipStatus) {
+
+TEST_F(Nodes_Test, Test_flipStatus) {
     valid_node1->flipStatus();
     EXPECT_TRUE(valid_node1->getStatus());
     valid_node1->flipStatus();
