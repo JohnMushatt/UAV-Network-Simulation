@@ -12,7 +12,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 
 set(Boost_NO_SYSTEM_PATHS ON)
-set(BOOST_ROOT "C:\\Users\\johnm\\CLionProjects\\uav_sim\\libs\\boost_1_70_0")
+set(BOOST_ROOT "C:\\Users\\johnm\\Desktop\\UAV-Network-Simulation\\libs\\boost_1_70_0")
 set(BOOST_INCLUDEDIR "${BOOST_ROOT}\\boost")
 find_package(Boost)
 

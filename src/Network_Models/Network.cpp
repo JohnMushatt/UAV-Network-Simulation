@@ -128,6 +128,14 @@ bool Network::removeLink(const shared_ptr<Link> &link) {
     return false;
 }
 
+/**
+ * Initialize the network to the default state.
+ * All command uavs are connected to each of their swarm drones.
+ * Each drone that is part of a swarm is connected to both their command uav
+ * and each of the drones in the swarm.
+ * This means that each swarm's state is independent of other swarms after
+ * this function returns
+ */
 void Network::initNetwork() {
     /**
      * Assign nodes to each drone
@@ -175,6 +183,12 @@ void Network::initNetwork() {
     }
 }
 
+/**
+* Attempts to find the node with the given string id
+* @param id ID of node to find
+* @return A shared ptr object of type Node that has the specified id
+*         returns nullptr if not found
+*/
 shared_ptr<Node> Network::findNode(const std::string &id) {
     for (size_t i = 0; i < this->node_list.size(); i++) {
         if (this->node_list.at(i)->getDrone()->getId() == (id)) {
@@ -185,8 +199,13 @@ shared_ptr<Node> Network::findNode(const std::string &id) {
 }
 
 /**
- * Displays the current status of the network
- */
+* Prints out the current state of the network
+* Displays:
+* Command UAVs
+* Base_Drones
+* Nodes
+* Links
+*/
 void Network::displayNetwork() {
 
 
@@ -278,19 +297,39 @@ void Network::linkDronesToCommander(const vector<shared_ptr<Base_Drone>> &drones
     }
 }
 
+/**
+ * Links all drones passed in to each other to form a swarm
+ * @param drones Drones to link together
+ * @return True if succesfully conencted ALL drones
+ */
 bool Network::linkSwarm(const vector<shared_ptr<Base_Drone>> &drones) {
+    /**
+     * Get current drone
+     */
     for (size_t i = 0; i < drones.size(); i++) {
         shared_ptr<Base_Drone> current_drone = drones.at(i);
-
+        /**
+         * Get all other drones
+         */
         for (size_t j = 0; j < drones.size(); j++) {
+            /**
+             * Skip over current_drone's index
+             */
+            if (j == i) {
+                j++;
+            }
             shared_ptr<Base_Drone> other_drone = drones.at(j);
-            if (other_drone) {
 
+            shared_ptr<Node> n1 = this->findNode(current_drone->getId());
+            shared_ptr<Node> n2 = this->findNode(other_drone->getId());
+            if (!this->linkExists(n1, n2)) {
+                this->addLink(n1,n2,1);
             }
         }
     }
 }
 
+//TODO
 vector<shared_ptr<Node>>
 Network::getShortestPath(const shared_ptr<Node> &src, const shared_ptr<Node> &des, int method) {
 

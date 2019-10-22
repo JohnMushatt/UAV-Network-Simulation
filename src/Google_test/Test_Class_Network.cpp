@@ -107,7 +107,25 @@ TEST_F(Networks_Test, Test_removeLink_LOW) {
     shared_ptr<Node> node2 = std::make_shared<Node>(drone2);
     this->network->addNode(node2);
     this->network->addLink(node1, node2, 1);
-    shared_ptr<Link> link = std::make_shared<Link>(node1,node2,1);
-    EXPECT_TRUE(this->network->removeLink(link));
+    shared_ptr<Link> link = std::make_shared<Link>(node1, node2, 1);
 
+    std::cout << "Testing removeLink() returns true on valid call..." << std::endl;
+    EXPECT_TRUE(this->network->removeLink(link));
+    if (HasFailure()) {
+        std::cout<< "removeLink() returned false on a valid call"<<std::endl;
+    }
+    else {
+        std::cout << "removeLink() returned true on a valid call" << std::endl;
+    }
+    std::cout << "Testing if removeLink() actually removed the link..." << std::endl;
+    EXPECT_FALSE(this->network->linkExists(node1, node2));
+    if (HasFailure()) {
+        std::cout<< "removeLink() failed to actually remove the link from the network"<<std::endl;
+    }
+    else {
+        std::cout << "removeLink() succesfully removed the link from the network" << std::endl;
+    }
+}
+TEST_F(Networks_Test,Test_linkSwarm) {
+    
 }

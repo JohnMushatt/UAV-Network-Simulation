@@ -116,6 +116,7 @@ public:
      * this function returns
      */
     void initNetwork();
+
     bool removeDrone(const shared_ptr<Base_Drone> &drone);
 
     bool removeNode(const shared_ptr<Node> &node);
@@ -125,6 +126,15 @@ public:
     vector<shared_ptr<Node>> A_STAR(const shared_ptr<Node> &src, const shared_ptr<Node> &des);
 
     vector<shared_ptr<Link>> getAdjacentNodes(const shared_ptr<Node> &node);
+
+    /**
+    * Checks if their is an existing link between the two nodes
+    * @param n1 Node 1
+    * @param n2 Node 2
+    * @return True if n1 and n2 have a link between each other
+    */
+    bool linkExists(const shared_ptr<Node> &n1, const shared_ptr<Node> &n2);
+
 private:
     /**
      * Private helper methods
@@ -147,15 +157,6 @@ private:
      * @return True if succesfully conencted ALL drones
      */
     bool linkSwarm(const vector<shared_ptr<Base_Drone>> &drones);
-
-    /**
-     * Checks if their is an existing link between the two nodes
-     * @param n1 Node 1
-     * @param n2 Node 2
-     * @return True if n1 and n2 have a link between each other
-     */
-    bool linkExists(const shared_ptr<Node> &n1, const shared_ptr<Node> &n2);
-
 
 
     /**
