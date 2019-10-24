@@ -80,7 +80,7 @@ bool Network::addLink(const shared_ptr<Node> &n1, const shared_ptr<Node> &n2, do
     try {
         shared_ptr<Link> link = std::make_shared<Link>(n1, n2, weight);
         this->link_list.push_back(link);
-        std::cout << "Added link!" << std::endl;
+        std::cout << "Added link: (" << n1->getDrone()->getId() << "," << n2->getDrone()->getId() << ")" << std::endl;
         return true;
     }
     catch (exception &e) {
@@ -313,21 +313,24 @@ bool Network::linkSwarm(const vector<shared_ptr<Base_Drone>> &drones) {
          */
         for (size_t j = 0; j < drones.size(); j++) {
             /**
-             * Skip over current_drone's index
-             */
-            if (j == i) {
-                j++;
-            }
-            shared_ptr<Base_Drone> other_drone = drones.at(j);
+            * Skip over current_drone's index
+            */
+            if (j != i) {
 
-            shared_ptr<Node> n1 = this->findNode(current_drone->getId());
-            shared_ptr<Node> n2 = this->findNode(other_drone->getId());
-            if (!this->linkExists(n1, n2)) {
-                this->addLink(n1,n2,1);
+                shared_ptr<Base_Drone> other_drone = drones.at(j);
+
+                shared_ptr<Node> n1 = this->findNode(current_drone->getId());
+                shared_ptr<Node> n2 = this->findNode(other_drone->getId());
+                if (!this->linkExists(n1, n2)) {
+                    this->addLink(n1, n2, 1);
+                }
             }
         }
     }
+    return true;
+
 }
+
 
 //TODO
 vector<shared_ptr<Node>>

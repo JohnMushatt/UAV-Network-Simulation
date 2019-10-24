@@ -134,11 +134,6 @@ public:
     * @return True if n1 and n2 have a link between each other
     */
     bool linkExists(const shared_ptr<Node> &n1, const shared_ptr<Node> &n2);
-
-private:
-    /**
-     * Private helper methods
-     */
     /**
      * Links all drones to their current commander
      */
@@ -157,6 +152,12 @@ private:
      * @return True if succesfully conencted ALL drones
      */
     bool linkSwarm(const vector<shared_ptr<Base_Drone>> &drones);
+
+private:
+    /**
+     * Private helper methods
+     */
+
 
 
     /**
