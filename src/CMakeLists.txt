@@ -12,7 +12,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 
 set(Boost_NO_SYSTEM_PATHS ON)
-set(BOOST_ROOT "C:\\Users\\johnm\\Desktop\\UAV-Network-Simulation\\libs\\boost_1_70_0")
+set(BOOST_ROOT "/home/john/Desktop/UAV-Network-Simulation/libs/boost_1_70_0")
 set(BOOST_INCLUDEDIR "${BOOST_ROOT}\\boost")
 find_package(Boost)
 
@@ -29,4 +29,4 @@ add_subdirectory(Network_Models)
 add_subdirectory(Google_test)
 #add_subdirectory(googletest-master)
 add_executable(uav_sim main.cpp)
-target_link_libraries(uav_sim MissionsCore DronesCore Network_Models_Core ${Boost_LIBRARIES})
+target_link_libraries(uav_sim MissionsCore DronesCore Network_Models_Core ${Boost_LIBRARIES} )

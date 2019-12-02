@@ -1,1 +1,1 @@
-add_library(DronesCore Basic_UAV.cpp Basic_UAV.h Base_Drone.cpp Base_Drone.h Command_UAV.cpp Command_UAV.h)
+add_library(DronesCore Basic_UAV.cpp Basic_UAV.h Base_Drone.cpp Base_Drone.h Command_UAV.cpp Command_UAV.h Networking_Commander.cpp Networking_Commander.h Networking_Basic_Drone.cpp Networking_Basic_Drone.h)

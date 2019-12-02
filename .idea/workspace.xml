@@ -7,10 +7,10 @@
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
       <config projectName="uav_sim" targetName="Google_Tests_run" />
-      <config projectName="uav_sim" targetName="gtest" />
       <config projectName="uav_sim" targetName="DronesCore" />
-      <config projectName="uav_sim" targetName="Network_Models_Core" />
+      <config projectName="uav_sim" targetName="gtest" />
       <config projectName="uav_sim" targetName="gmock_main" />
+      <config projectName="uav_sim" targetName="Network_Models_Core" />
       <config projectName="uav_sim" targetName="MissionsCore" />
       <config projectName="uav_sim" targetName="gtest_main" />
       <config projectName="uav_sim" targetName="uav_sim" />
@@ -24,12 +24,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b42670ab-4f1b-442c-9d86-c87fd38f17f7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Drones/Networking_Basic_Drone.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Drones/Networking_Basic_Drone.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Drones/Networking_Commander.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Drones/Networking_Commander.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Google_test/Test_Class_Networking_Commander.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Google_test/Test_Class_Network.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Google_test/Test_Class_Network.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Network_Models/Network.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network_Models/Network.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Network_Models/Network.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network_Models/Network.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Drones/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drones/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Google_test/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Google_test/CMakeLists.txt" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,19 +56,31 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="AqPTngPo" />
+  </component>
   <component name="NamedScopeManager">
     <scope name="test" pattern="!file[untitled]:Google_test/*" />
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
+  <component name="OCResolveContextSettings">
+    <option name="configuration" value="0-Debug-DronesCore" />
+  </component>
   <component name="ProjectId" id="1SDFlcziQuax3be9mWcc1evfASK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.advertisement.text.has.clang-format" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/CMakeLists.txt" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -80,25 +96,7 @@
       <recent name="C:\Users\johnm\CLionProjects\uav_sim\src" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Google Test.All in Test_Class_Network.cpp">
-    <configuration name="All in Test_Class_Link.cpp and 1 more" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="uav_sim" TARGET_NAME="Google_Tests_run" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="uav_sim" RUN_TARGET_NAME="Google_Tests_run" TEST_PATTERN="all-tests(file://$PROJECT_DIR$/src/Google_test/Test_Class_Link.cpp):all-tests(file://$PROJECT_DIR$/src/Google_test/Test_Class_Node.cpp)" TEST_MODE="PATTERN">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-        <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Google Test.All in Test_Class_Networking_Commander.cpp">
     <configuration name="All in Test_Class_Link.cpp and 2 more" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="uav_sim" TARGET_NAME="Google_Tests_run" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="uav_sim" RUN_TARGET_NAME="Google_Tests_run" TEST_PATTERN="all-tests(file://$PROJECT_DIR$/src/Google_test/Test_Class_Link.cpp):all-tests(file://$PROJECT_DIR$/src/Google_test/Test_Class_Network.cpp):all-tests(file://$PROJECT_DIR$/src/Google_test/Test_Class_Node.cpp)" TEST_MODE="PATTERN">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -106,6 +104,12 @@
       </method>
     </configuration>
     <configuration name="All in Test_Class_Network.cpp" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="uav_sim" TARGET_NAME="Google_Tests_run" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="uav_sim" RUN_TARGET_NAME="Google_Tests_run" TEST_PATTERN="all-tests(file://$PROJECT_DIR$/src/Google_test/Test_Class_Network.cpp)" TEST_MODE="PATTERN">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in Test_Class_Networking_Commander.cpp" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="uav_sim" TARGET_NAME="Google_Tests_run" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="uav_sim" RUN_TARGET_NAME="Google_Tests_run" TEST_PATTERN="all-tests(file://$PROJECT_DIR$/src/Google_test/Test_Class_Networking_Commander.cpp)" TEST_MODE="PATTERN">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
@@ -181,20 +185,32 @@
       <item itemvalue="CMake Application.MissionsCore" />
       <item itemvalue="CMake Application.Network_Models_Core" />
       <item itemvalue="Google Test.All in Test_Class_Node.cpp" />
-      <item itemvalue="Google Test.All in Test_Class_Link.cpp and 1 more" />
       <item itemvalue="Google Test.All in Test_Class_Network.cpp" />
       <item itemvalue="Google Test.All in Test_Class_Link.cpp and 2 more" />
+      <item itemvalue="Google Test.All in Test_Class_Networking_Commander.cpp" />
       <item itemvalue="Python tests.Unittests in Google_test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Google Test.All in Test_Class_Network.cpp" />
-        <item itemvalue="Python tests.Unittests in Google_test" />
+        <item itemvalue="Google Test.All in Test_Class_Networking_Commander.cpp" />
         <item itemvalue="Google Test.All in Test_Class_Node.cpp" />
         <item itemvalue="Google Test.All in Test_Class_Link.cpp and 2 more" />
-        <item itemvalue="Google Test.All in Test_Class_Link.cpp and 1 more" />
+        <item itemvalue="Python tests.Unittests in Google_test" />
+        <item itemvalue="Google Test.All in Test_Class_Network.cpp" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="StructureViewFactory">
     <option name="ACTIVE_ACTIONS" value=",INHERITORS_AND_CATEGORIES" />
@@ -222,6 +238,7 @@
       <workItem from="1571746182336" duration="9400000" />
       <workItem from="1571837521861" duration="3385000" />
       <workItem from="1571890806840" duration="4361000" />
+      <workItem from="1575267535854" duration="4128000" />
     </task>
     <servers />
   </component>
@@ -240,6 +257,28 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="743" y="311" width="426" height="479" key="FileChooserDialogImpl" timestamp="1575267726977">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="743" y="311" width="426" height="479" key="FileChooserDialogImpl/0.25.1920.1055@0.25.1920.1055" timestamp="1575267726977" />
+    <state width="1874" height="281" key="GridCell.Tab.0.bottom" timestamp="1575271833970">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1874" height="281" key="GridCell.Tab.0.bottom/0.25.1920.1055@0.25.1920.1055" timestamp="1575271833970" />
+    <state width="1874" height="281" key="GridCell.Tab.0.center" timestamp="1575271833969">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1874" height="281" key="GridCell.Tab.0.center/0.25.1920.1055@0.25.1920.1055" timestamp="1575271833969" />
+    <state width="1874" height="281" key="GridCell.Tab.0.left" timestamp="1575271833969">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1874" height="281" key="GridCell.Tab.0.left/0.25.1920.1055@0.25.1920.1055" timestamp="1575271833969" />
+    <state width="1874" height="281" key="GridCell.Tab.0.right" timestamp="1575271833970">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1874" height="281" key="GridCell.Tab.0.right/0.25.1920.1055@0.25.1920.1055" timestamp="1575271833970" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
