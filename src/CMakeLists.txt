@@ -3,7 +3,7 @@ project(uav_sim)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
-add_compile_options(-D__USE_W32_SOCKETS)
+#add_compile_options(-D__USE_W32_SOCKETS)
 set(CMAKE_BUILD_TYPE DEBUG)
 
 
@@ -28,5 +28,7 @@ add_subdirectory(Drones)
 add_subdirectory(Network_Models)
 add_subdirectory(Google_test)
 #add_subdirectory(googletest-master)
+add_subdirectory(Networking)
+
 add_executable(uav_sim main.cpp)
-target_link_libraries(uav_sim MissionsCore DronesCore Network_Models_Core ${Boost_LIBRARIES} )
+target_link_libraries(uav_sim MissionsCore DronesCore Network_Models_Core Netwoking_Core ${Boost_LIBRARIES} )

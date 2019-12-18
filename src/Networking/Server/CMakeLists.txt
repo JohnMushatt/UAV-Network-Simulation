@@ -1,0 +1,1 @@
+add_library(Server_Core Server.cpp Server.h)
